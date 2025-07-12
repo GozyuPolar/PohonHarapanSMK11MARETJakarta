@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pohon Harapan SMK 11 Maret Jakarta</title>
+  <style>
+    :root {
+      --primary: #2e7d32;
+      --accent: #4caf50;
+      --bg: #e8f5e9;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg);
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .form-container {
+      background: white;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 900px; /* Lebar maksimum di laptop */
+      margin: 40px auto;
+      box-sizing: border-box;
+    }
+
+    h2 {
+      text-align: center;
+      color: var(--primary);
+      margin-bottom: 30px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin: 12px 0 6px;
+      color: #2e7d32;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      font-size: 15px;
+      box-sizing: border-box;
+      background-color: #f9fbe7;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 20px;
+      padding: 14px;
+      background-color: var(--accent);
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #388e3c;
+    }
+
+    @media (max-width: 600px) {
+      .form-container {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>🌳 Kata kata Untuk Pohon Harapan SMK 11 Maret Jakarta 🌳</h2>
+
+    <label for="nama">Nama (opsional)</label>
+    <input type="text" id="nama" placeholder="Nama peserta">
+
+    <label for="harapan">Tulis Harapanmu</label>
+    <textarea id="harapan" rows="4" placeholder="Semoga kita makin kompak dan sukses bareng..."></textarea>
+
+    <button onclick="kirimKeWA()">Kirim ke WhatsApp</button>
+  </div>
+
+  <script>
+    function kirimKeWA() {
+      const nama = document.getElementById("nama").value.trim();
+      const harapan = document.getElementById("harapan").value.trim();
+      const nomorTujuan = "628571841228"; // Ganti nomor WA kamu
+
+      if (harapan === "") {
+        alert("Tolong isi harapannya dulu ya 🙏");
+        return;
+      }
+
+      const pesan = `🌿 Kata kata Pohon Harapan 🌿"${harapan}"Dari: ${nama || "Anonim"}`;
+      const link = `https://wa.me/${nomorTujuan}?text=${encodeURIComponent(pesan)}`;
+      window.open(link, "_blank");
+    }
+  </script>
+</body>
+</html>
